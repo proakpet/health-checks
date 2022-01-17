@@ -13,7 +13,7 @@ def check_disk_full(disk, min_GB, min_percent):
     percent_free = 100 * du.free / du.total
     # Calculate how many free gigabytes
     gigabytes_free = du.free/2**30
-    if percent_free < min_percent or gigabytes_free < min_GB:
+    if gigabytes_free < min_GB or percent_free < min_percent:
         return False
     return True
 
